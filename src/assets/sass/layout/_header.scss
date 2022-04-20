@@ -1,0 +1,75 @@
+.header-section {
+	.navbar-brand {
+		padding : 25px 0;
+
+		img {
+			max-height : 40px;
+		}
+	}
+
+	.nav-link {
+		@include font-style(15, 22, 600);
+		color   : #000 !important;
+		padding : 34px 30px !important;
+		@include media-breakpoint-down(xxl) {
+			padding : 34px 20px !important;
+		}
+		@include media-breakpoint-down(lg) {
+			padding : 14px 20px !important;
+		}
+
+		&.router-link-active,
+		&:hover {
+			color : $main !important;
+		}
+	}
+
+	.offcanvas-start {
+		width : 320px;
+	}
+
+	.dropdown-item {
+		padding : 10px 20px;
+	}
+
+	.dropdown-menu {
+		top              : 90px;
+		display          : block;
+		opacity          : 0;
+		transition       : all .5s;
+		transform        : scaleY(0);
+		transform-origin : 0 0 0;
+		position         : absolute;
+		@include media-breakpoint-down(lg) {
+			left : 15px !important;
+			&.show {
+				inset     : 0 auto auto 15px !important;
+				transform : translate3d(0px, 41px, 0px) !important;
+			}
+		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		.dropdown-toggle::after {
+			content: none;
+		}
+	}
+
+	.nav-item:hover .dropdown-menu {
+		top        : 90px;
+		opacity    : 1;
+		visibility : visible;
+		transform  : scaleY(1);
+		@include media-breakpoint-down(lg) {
+			transform : scaleY(0);
+		}
+	;
+	}
+
+	.dropdown-item:hover, .dropdown-item:focus {
+		color            : #FFFFFF;
+		background-color : $main;
+	}
+
+
+}
